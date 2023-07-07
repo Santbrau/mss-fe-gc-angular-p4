@@ -1,0 +1,11 @@
+<h2>Lista de Tareas</h2>
+<ul>
+    <li *ngFor="let tarea of tareas; let i = index" [ngClass]="{ 'completada': tarea.completada }">
+        <h3>{{ tarea.titulo }}</h3>
+        <p>{{ tarea.descripcion }}</p>
+        <button (click)="toggleCompletada(i)">
+        {{ tarea.completada ? 'Desmarcar' : 'Completada' }}
+        </button>
+        <button (click)="eliminarTarea(i)">Eliminar</button>
+    </li>
+</ul>
